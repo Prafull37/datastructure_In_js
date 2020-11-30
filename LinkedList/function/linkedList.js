@@ -21,8 +21,7 @@ function Node(data){
 
 function LinkedList(){
     this.head=null;
-    this.size=0;
-    
+    this.size=0;  
 }
 
 /**
@@ -32,16 +31,17 @@ function LinkedList(){
  * add at any position
  */
 LinkedList.prototype.add=function(data,position=null){
-    let node=new Node(data)
+    let node=new Node(data,position)
+   
     if(this.head===null){
         this.head=node
     }
-    else if(this.size>0||position==0){
-        current=this.head.next;
+    else if(this.size>0&&position==0){
+        current=this.head;
         this.head=node;
         this.head.next=current;
     }
-    else if(position<this.getSize()){
+    else if(position!==null && position<this.getSize()){
         let current=this.head;
         let previous;
         let currentIndex=0;
@@ -54,14 +54,15 @@ LinkedList.prototype.add=function(data,position=null){
         previous.next=node
     }
     else{
-        // let count=0;
         let current=this.head;
+
         while(current.next){
             current=current.next
         }
         current.next=node
     }
     this.size++;
+    
 }
 
 /**
@@ -85,7 +86,7 @@ LinkedList.prototype.remove=function(index=null){
         this.head=current.next;
     }
     else{
-        console.log("index",current)
+        
         let count=0;
         while(count<index){
             previous=current;
@@ -94,9 +95,9 @@ LinkedList.prototype.remove=function(index=null){
           }
           previous.next=current.next;
     }
-    this.length--;
+    this.size--;
+ 
  }
-
 
 
 LinkedList.prototype.getIndexOf=function(elementData){
@@ -146,3 +147,5 @@ LinkedList.prototype.getSize=function(){
     }
     return array;
   }
+
+  let list=new LinkedList();

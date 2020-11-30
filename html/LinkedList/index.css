@@ -1,0 +1,86 @@
+.renderArea{
+    display:flex;
+    border:2px solid rgba(0,0,0,0.3);
+    width:70%;
+    min-height: 400px;
+    margin:auto;
+    flex-wrap: wrap;
+    align-content:start;
+    /* justify-content: center; */
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+
+.datadiv,
+.indexdiv,
+.addButtons,
+.removeButtons{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding:1rem;
+}
+.addButtons > button,
+.removeButtons > button{
+    color:white;
+    padding:1rem;
+    border-radius:16px;
+    margin:0.5rem;
+    cursor: pointer;
+}
+
+button[id^="add"],
+.addButtons > button:active,
+.addButtons > button:focus{
+    background-color: rgb(94, 216, 94);
+    
+}
+button[id^="remove"],
+.removeButtons > button:active,
+.removeButtons > button:focus{
+    background-color: rgb(177, 98, 98);   
+}
+
+.addButtons > button:hover{
+    background-color: rgb(158, 243, 158);
+}
+
+.removeButtons > button:hover{
+    background-color: rgb(231, 157, 157);   
+}
+
+#validDiv{
+    display:flex;
+    justify-content:center;
+    color:red;
+    margin:0.5rem auto;
+}
+
+input[type="text"]{
+    width:40px;
+    align-self: center;
+}
+
+
+.box{
+    border:2px solid rgba(0,0,0,0.5);
+    width:30px;
+    height:20px;
+    font-size:0.7rem;
+    padding:4px;
+}
+
+.box-container{
+    display:flex;
+    width:40px;
+    flex-wrap: wrap;
+    height:50px;
+    margin:8px;
+}
+
+.address{
+    margin:auto;
+}
